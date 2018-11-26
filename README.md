@@ -4,7 +4,7 @@ This MATLAB code computes protein binding affinities across sequences where the 
 
 ## Prerequisites
 
-This code requires bedtools (https://bedtools.readthedocs.io/) and a reference FASTA file.
+This code requires bedtools (https://bedtools.readthedocs.io/) and a reference FASTA file. If a different PWM is to be used, then this should be provided (and the filename changed in CalculateProteinAffinity.m)
 
 ## Algorithm
 
