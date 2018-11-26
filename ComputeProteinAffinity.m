@@ -1,9 +1,7 @@
-function [profile] = ComputeProteinAffinity(DNA_seq)
-
 % function uses read in DNA_seq to calculate affinity for protein
 % using PWM method
-%
-% call PWM method for base-pair level binding constants
+
+function [profile] = ComputeProteinAffinity(DNA_seq)
 
 global K0
 
