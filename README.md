@@ -22,6 +22,7 @@ The main loop is in TFaffinity_aggregate.m, and performs the following algorithm
 
 - This does not save individual profiles, but the code is easily tweaked to return single region profiles.
 - The code gives affinities at the *left* edge of the motif, so the profiles need shifting by length (motif) /2 to centre the profiles relative to the centre of the regions.
+- The code is currently set up to run on a Linux or Unix system due to the use of system calls in MATLAB out to the running shell. These would need to be changed if run on Windows.
 
 ### Use on an HPC facility
 
