@@ -8,7 +8,7 @@ This code requires bedtools (https://bedtools.readthedocs.io/) and a reference F
 
 ## Algorithm
 
-The main loop is in bed_file_affinity.m, and performs the following algorithm:
+The main loop is in TFaffinity_aggregate.m, and performs the following algorithm:
 
 1. Read through each line of the BED file:
     - Extract the sequence from the reference,
