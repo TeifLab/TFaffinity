@@ -8,6 +8,8 @@ This code requires bedtools (https://bedtools.readthedocs.io/) and a reference F
 
 ## Algorithm
 
+The main loop is in bed_file_affinity.m, and performs the following algorithm:
+
 1. Read through each line of the BED file:
     - Extract the sequence from the reference,
     - Compute the binding affinities using the TRAP algorithm (Roider et al., 2007) and the given PWM,
@@ -26,13 +28,13 @@ This code requires bedtools (https://bedtools.readthedocs.io/) and a reference F
 The code can easily be extended to the embarrassingly parallel computation of large numbers of regions by splitting the regions into more manageable bed files (each of, say, 1000 regions), running the script on each of these bed files as a separate process on a HPC node, and aggregating and averaging the output files generated. 
 
 In this case, to ensure no overwriting of results, the following file names would need to change to incorporate the task identifier given to the process by the HPC facility:
-    - Input bed file name,
-    - Temporary file name used as workspace,
-    - Output file name.
+  - Input bed file name,
+  - Temporary file name used as workspace,
+  - Output file name.
 
 Please consult your local HPC documentation for details of how to do this, as it would be specific to your facility.
 
 
-### Credits
+## Credits
 
 Written in MATLAB by geejaytee; PWM_affinity.m is a direct translation of an R script in the tRap affinity package developed from Roider et al., 2007.
