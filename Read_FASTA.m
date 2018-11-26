@@ -1,3 +1,7 @@
+% function for reading in FASTA file
+% Length is provided to ensure efficient preallocation of memory
+% and should be > length of sequence
+
 function [Seq,seq_length,header] = Read_FASTA(FastaFile,Length)
 
 Seq = zeros(1,Length);
@@ -5,8 +9,11 @@ fid4 = fopen(FastaFile,'r');
 
 seq_length = 0;
 
+% If file opens correctly
 if fid4>0
     header = fgets(fid4);
+    
+    % check that it contains a FASTA header
     if header(1)~='>'
         warning(['''' FastaFile ''' is not a FASTA file']);
     else
@@ -19,12 +26,15 @@ if fid4>0
     
         disp(['Sequence for ' header ' found']);
         i = 1;
+        
+        % loop over symbols in sequencce
         while i<=Length
             nextsymbol = fscanf(fid4,'%c',1);
             if ~ischar(nextsymbol) || isempty(nextsymbol)
                 warning(['Only ' num2str(i-1) ' symbols found in sequence']);
                 break;
             end
+            % if FASTA file broken over multiple lines, skip character
             if uint8(nextsymbol)==10 || uint8(nextsymbol)==13  || uint8(nextsymbol)==32
                 continue;
             else
@@ -47,8 +57,7 @@ if fid4>0
             end
             i=i+1;
         end
-  
-    
+ 
         seq_length = i-1;
     end
 else
