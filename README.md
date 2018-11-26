@@ -10,7 +10,7 @@ This code requires bedtools (https://bedtools.readthedocs.io/) and a reference F
 
 1. Read through each line of the BED file:
     - Extract the sequence from the reference,
-    - Compute the binding affinities using the TRAP algorithm (Roider et al, 2007) and the given PWM,
+    - Compute the binding affinities using the TRAP algorithm (Roider et al., 2007) and the given PWM,
     - Aggregate the affinity and keep track of the number of profiles.
 2. Once the file has been cycled through:
     - Return the sum of the profiles,
@@ -25,4 +25,10 @@ This code requires bedtools (https://bedtools.readthedocs.io/) and a reference F
     - Input bed file name,
     - Temporary file name used as workspace,
     - Output file name.
-Please consult your local HPC documentation for details of how to do this.
+
+Please consult your local HPC documentation for details of how to do this, as it would be specific to your implementation.
+
+
+### Credits
+
+Written in MATLAB by geejaytee; PWM_affinity.m is a direct translation of an R script in the tRap affinity package developed from (Roider et al., 2007).
