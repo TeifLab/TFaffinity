@@ -2,6 +2,8 @@
 % Note that this does not save individual profiles as it only outputs the 
 % sum of the profiles and the mean profile 
 
+% For Windows systems, the lines using "system" command would need to change
+
 % Open bed file - change the file name for each file that you wish to parse
 fid8 = fopen(['Example.bed']);
 
