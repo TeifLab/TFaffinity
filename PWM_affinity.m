@@ -62,8 +62,10 @@ switch nargin
 end
 
 % outputs:
-% - a_pwm - forward affinities (per base)
-% - a_rev - reverse affinities (per base)
+% - K_pwm - forward "binding constant"
+% - K_rev - reverse "binding constant"
+
+% change K_pwm and K_rev to a_pwm and a_rev in return values to return affinities ( K/(1+K) )
   
 Seq_length = length(Seq_DNA);
 
